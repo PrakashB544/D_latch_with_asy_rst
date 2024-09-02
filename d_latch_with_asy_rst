@@ -1,0 +1,14 @@
+module d_latch (y,d,en,rst); //asynchronous reset 
+  input d,en,rst;
+  output reg y;
+  
+  always@(*)
+    begin 
+      if(rst)
+        y=1'b0;
+     else if(en)
+        y<=d;
+      else
+        y<=0;
+    end
+endmodule
